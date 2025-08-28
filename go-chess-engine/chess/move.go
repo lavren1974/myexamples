@@ -9,8 +9,9 @@ type Move struct {
 }
 
 const (
-	White Color = 0
-	Black Color = 1
+	White   Color = 0
+	Black   Color = 1
+	NoColor Color = 2 // Useful for error checking
 )
 
 const (
@@ -29,20 +30,29 @@ const (
 	BlackKing
 )
 
-// FormatMove converts a Move struct to a UCI-compliant string (e.g., "e2e4").
+// PieceColor returns the color of a piece. Returns NoColor for Empty.
+func (p Piece) Color() Color {
+	if p >= WhitePawn && p <= WhiteKing {
+		return White
+	}
+	if p >= BlackPawn && p <= BlackKing {
+		return Black
+	}
+	return NoColor
+}
+
+// ... (rest of the file remains the same)
+// FormatMove, ParseMove, squareToIndex, indexToSquare
 func FormatMove(m Move) string {
 	return indexToSquare(m.From) + indexToSquare(m.To)
 }
 
-// ParseMove converts a UCI string to a Move struct.
 func ParseMove(s string) Move {
 	return Move{
 		From: squareToIndex(s[0:2]),
 		To:   squareToIndex(s[2:4]),
 	}
 }
-
-// --- Private utility functions ---
 
 func squareToIndex(s string) int {
 	file := int(s[0] - 'a')
