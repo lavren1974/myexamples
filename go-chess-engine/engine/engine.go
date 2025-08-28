@@ -14,12 +14,15 @@ func New() *Engine {
 	return &Engine{}
 }
 
-// FindBestMove is the main thinking function.
-// For now, it just picks a random move.
+// FindBestMove now uses the legal move generator.
 func (e *Engine) FindBestMove(s *chess.State) chess.Move {
-	moves := s.GenerateMoves()
+	// Call the new legal move generator
+	moves := s.GenerateLegalMoves()
+
 	if len(moves) == 0 {
-		return chess.Move{} // Return a null move
+		// If there are no legal moves, the game is over (checkmate or stalemate).
+		// Return a null move.
+		return chess.Move{}
 	}
 
 	rand.Seed(time.Now().UnixNano())

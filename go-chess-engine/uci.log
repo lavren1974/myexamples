@@ -1,86 +1,16 @@
-2025/08/28 10:57:24 --- Engine Started ---
-2025/08/28 10:57:24 Received: xboard
-2025/08/28 10:57:24 Received: uci
-2025/08/28 10:57:24 Sending: id name GoNativeRefactored
-2025/08/28 10:57:24 Sending: id author Go Developer
-2025/08/28 10:57:24 Sending: uciok
-2025/08/28 10:57:24 Received: isready
-2025/08/28 10:57:24 Sending: readyok
-2025/08/28 10:57:25 Received: ucinewgame
-2025/08/28 10:57:25 Received: isready
-2025/08/28 10:57:25 Sending: readyok
-2025/08/28 10:57:25 Received: position startpos moves e2e4
-2025/08/28 10:57:25 Received: go wtime 300000 btime 300000 winc 0 binc 0
-2025/08/28 10:57:25 Sending: bestmove g8f6
-2025/08/28 10:57:26 Received: position startpos moves e2e4 g8f6 e4e5
-2025/08/28 10:57:26 Received: go wtime 298641 btime 300000 winc 0 binc 0
-2025/08/28 10:57:26 Sending: bestmove g7g6
-2025/08/28 10:57:28 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3
-2025/08/28 10:57:28 Received: go wtime 297001 btime 299989 winc 0 binc 0
-2025/08/28 10:57:28 Sending: bestmove f6e4
-2025/08/28 10:57:30 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4
-2025/08/28 10:57:30 Received: go wtime 295517 btime 299989 winc 0 binc 0
-2025/08/28 10:57:30 Sending: bestmove g6g5
-2025/08/28 10:57:32 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3
-2025/08/28 10:57:32 Received: go wtime 294236 btime 299978 winc 0 binc 0
-2025/08/28 10:57:32 Sending: bestmove f8g7
-2025/08/28 10:57:35 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4
-2025/08/28 10:57:35 Received: go wtime 291502 btime 299978 winc 0 binc 0
-2025/08/28 10:57:35 Sending: bestmove b7b6
-2025/08/28 10:57:37 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3
-2025/08/28 10:57:37 Received: go wtime 289768 btime 299978 winc 0 binc 0
-2025/08/28 10:57:37 Sending: bestmove b6b5
-2025/08/28 10:57:38 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2
-2025/08/28 10:57:38 Received: go wtime 288111 btime 299978 winc 0 binc 0
-2025/08/28 10:57:38 Sending: bestmove g7f6
-2025/08/28 10:57:41 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6
-2025/08/28 10:57:41 Received: go wtime 286002 btime 299978 winc 0 binc 0
-2025/08/28 10:57:41 Sending: bestmove h8g8
-2025/08/28 10:57:42 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4
-2025/08/28 10:57:42 Received: go wtime 284736 btime 299978 winc 0 binc 0
-2025/08/28 10:57:42 Sending: bestmove c8b7
-2025/08/28 10:57:46 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1
-2025/08/28 10:57:46 Received: go wtime 280893 btime 299968 winc 0 binc 0
-2025/08/28 10:57:46 Sending: bestmove b7c6
-2025/08/28 10:57:49 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1 b7c6 c2c3
-2025/08/28 10:57:49 Received: go wtime 278221 btime 299968 winc 0 binc 0
-2025/08/28 10:57:49 Sending: bestmove d8c8
-2025/08/28 10:57:52 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1 b7c6 c2c3 d8c8 d1d2
-2025/08/28 10:57:52 Received: go wtime 276330 btime 299968 winc 0 binc 0
-2025/08/28 10:57:52 Sending: bestmove e8d8
-2025/08/28 10:57:53 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1 b7c6 c2c3 d8c8 d1d2 e8d8 d2g5
-2025/08/28 10:57:53 Received: go wtime 274643 btime 299968 winc 0 binc 0
-2025/08/28 10:57:53 Sending: bestmove c8b7
-2025/08/28 10:57:56 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1 b7c6 c2c3 d8c8 d1d2 e8d8 d2g5 c8b7 g5h6
-2025/08/28 10:57:56 Received: go wtime 272706 btime 299968 winc 0 binc 0
-2025/08/28 10:57:56 Sending: bestmove b7a6
-2025/08/28 10:57:58 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1 b7c6 c2c3 d8c8 d1d2 e8d8 d2g5 c8b7 g5h6 b7a6 h6h5
-2025/08/28 10:57:58 Received: go wtime 271003 btime 299968 winc 0 binc 0
-2025/08/28 10:57:58 Sending: bestmove g8g4
-2025/08/28 10:58:00 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1 b7c6 c2c3 d8c8 d1d2 e8d8 d2g5 c8b7 g5h6 b7a6 h6h5 g8g4 g1g4
-2025/08/28 10:58:00 Received: go wtime 268472 btime 299968 winc 0 binc 0
-2025/08/28 10:58:00 Sending: bestmove a6b6
-2025/08/28 10:58:03 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1 b7c6 c2c3 d8c8 d1d2 e8d8 d2g5 c8b7 g5h6 b7a6 h6h5 g8g4 g1g4 a6b6 c3c4
-2025/08/28 10:58:03 Received: go wtime 266191 btime 299968 winc 0 binc 0
-2025/08/28 10:58:03 Sending: bestmove b6a6
-2025/08/28 10:58:05 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1 b7c6 c2c3 d8c8 d1d2 e8d8 d2g5 c8b7 g5h6 b7a6 h6h5 g8g4 g1g4 a6b6 c3c4 b6a6 b2b3
-2025/08/28 10:58:05 Received: go wtime 264707 btime 299968 winc 0 binc 0
-2025/08/28 10:58:05 Sending: bestmove a6a2
-2025/08/28 10:58:06 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1 b7c6 c2c3 d8c8 d1d2 e8d8 d2g5 c8b7 g5h6 b7a6 h6h5 g8g4 g1g4 a6b6 c3c4 b6a6 b2b3 a6a2 a1a2
-2025/08/28 10:58:06 Received: go wtime 263395 btime 299968 winc 0 binc 0
-2025/08/28 10:58:06 Sending: bestmove c6b7
-2025/08/28 10:58:10 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1 b7c6 c2c3 d8c8 d1d2 e8d8 d2g5 c8b7 g5h6 b7a6 h6h5 g8g4 g1g4 a6b6 c3c4 b6a6 b2b3 a6a2 a1a2 c6b7 b1c3
-2025/08/28 10:58:10 Received: go wtime 260426 btime 299968 winc 0 binc 0
-2025/08/28 10:58:10 Sending: bestmove b8a6
-2025/08/28 10:58:12 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1 b7c6 c2c3 d8c8 d1d2 e8d8 d2g5 c8b7 g5h6 b7a6 h6h5 g8g4 g1g4 a6b6 c3c4 b6a6 b2b3 a6a2 a1a2 c6b7 b1c3 b8a6 b3b4
-2025/08/28 10:58:12 Received: go wtime 258832 btime 299968 winc 0 binc 0
-2025/08/28 10:58:12 Sending: bestmove c7c6
-2025/08/28 10:58:13 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1 b7c6 c2c3 d8c8 d1d2 e8d8 d2g5 c8b7 g5h6 b7a6 h6h5 g8g4 g1g4 a6b6 c3c4 b6a6 b2b3 a6a2 a1a2 c6b7 b1c3 b8a6 b3b4 c7c6 c4c5
-2025/08/28 10:58:13 Received: go wtime 257519 btime 299968 winc 0 binc 0
-2025/08/28 10:58:13 Sending: bestmove a6c5
-2025/08/28 10:58:15 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1 b7c6 c2c3 d8c8 d1d2 e8d8 d2g5 c8b7 g5h6 b7a6 h6h5 g8g4 g1g4 a6b6 c3c4 b6a6 b2b3 a6a2 a1a2 c6b7 b1c3 b8a6 b3b4 c7c6 c4c5 a6c5 d4c5
-2025/08/28 10:58:15 Received: go wtime 256269 btime 299968 winc 0 binc 0
-2025/08/28 10:58:15 Sending: bestmove e7f6
-2025/08/28 10:58:18 Received: position startpos moves e2e4 g8f6 e4e5 g7g6 f2f3 f6e4 f3e4 g6g5 g2g3 f8g7 d2d4 b7b6 g1f3 b6b5 f1e2 g7f6 e5f6 h8g8 g3g4 c8b7 h1g1 b7c6 c2c3 d8c8 d1d2 e8d8 d2g5 c8b7 g5h6 b7a6 h6h5 g8g4 g1g4 a6b6 c3c4 b6a6 b2b3 a6a2 a1a2 c6b7 b1c3 b8a6 b3b4 c7c6 c4c5 a6c5 d4c5 e7f6 g4g8
-2025/08/28 10:58:18 Received: go wtime 253940 btime 299968 winc 0 binc 0
-2025/08/28 10:58:18 Sending: bestmove d8c8
+12:24:20 --- Engine Started ---
+12:24:20 Received: xboard
+12:24:20 Received: uci
+12:24:20 Sending: id name GoNativeRefactored
+12:24:20 Sending: id author Go Developer
+12:24:20 Sending: uciok
+12:24:20 Received: isready
+12:24:20 Sending: readyok
+12:24:21 Received: ucinewgame
+12:24:21 Received: isready
+12:24:21 Sending: readyok
+12:24:21 Received: position startpos moves e2e4
+12:24:21 Received: go wtime 300000 btime 300000 winc 0 binc 0
+12:24:21 Sending: bestmove g7g5
+12:24:24 Received: quit
+12:24:24 --- Engine Quit ---

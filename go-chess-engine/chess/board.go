@@ -4,8 +4,10 @@ import "strings"
 
 // State holds all information about the current state of the game.
 type State struct {
-	Board      [64]Piece
-	SideToMove Color
+	Board           [64]Piece
+	SideToMove      Color
+	whiteKingSquare int
+	blackKingSquare int
 	// Castling rights, en passant target, etc., would go here.
 }
 
@@ -16,8 +18,23 @@ func New() *State {
 
 // ApplyMove updates the board state by making a move.
 func (s *State) ApplyMove(m Move) {
-	s.Board[m.To] = s.Board[m.From]
+	piece := s.Board[m.From]
+
+	// Handle promotions
+	if m.Promotion != Empty {
+		s.Board[m.To] = m.Promotion // Place the new piece
+	} else {
+		s.Board[m.To] = piece // Just move the existing piece
+	}
 	s.Board[m.From] = Empty
+
+	// Update king's position if it moved
+	if piece == WhiteKing {
+		s.whiteKingSquare = m.To
+	} else if piece == BlackKing {
+		s.blackKingSquare = m.To
+	}
+
 	if s.SideToMove == White {
 		s.SideToMove = Black
 	} else {
@@ -40,7 +57,14 @@ func MustParseFEN(fen string) *State {
 			file += int(char - '0')
 		} else {
 			square := rank*8 + file
-			s.Board[square] = pieceFromChar(char)
+			piece := pieceFromChar(char)
+			s.Board[square] = piece
+			// Find and store king positions
+			if piece == WhiteKing {
+				s.whiteKingSquare = square
+			} else if piece == BlackKing {
+				s.blackKingSquare = square
+			}
 			file++
 		}
 	}
@@ -54,6 +78,7 @@ func MustParseFEN(fen string) *State {
 	return s
 }
 
+// ... (pieceFromChar function remains the same)
 func pieceFromChar(c rune) Piece {
 	switch c {
 	case 'p':

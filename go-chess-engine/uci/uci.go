@@ -3,36 +3,33 @@ package uci
 import (
 	"bufio"
 	"fmt"
-	"log"
-	"os"
-	"strings"
-
 	"go-chess-engine/chess"
 	"go-chess-engine/engine"
+	"go-chess-engine/logging" // Import the logging package
+	"os"
+	"strings"
 )
 
-// Handler manages the UCI communication session.
+// Handler no longer needs a logger field.
 type Handler struct {
 	state  *chess.State
 	engine *engine.Engine
-	logger *log.Logger // Add a logger field
 }
 
-// NewHandler now accepts a logger.
-func NewHandler(logger *log.Logger) *Handler {
+// NewHandler is now simpler.
+func NewHandler() *Handler {
 	return &Handler{
 		state:  chess.New(),
 		engine: engine.New(),
-		logger: logger, // Store the logger
 	}
 }
 
-// Loop is the main UCI command loop.
+// Loop now uses the global logger.
 func (h *Handler) Loop() {
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		command := scanner.Text()
-		h.logger.Printf("Received: %s", command) // Use the handler's logger
+		logging.Log.Printf("Received: %s", command) // Use global logger
 
 		fields := strings.Fields(command)
 		if len(fields) == 0 {
@@ -66,12 +63,12 @@ func (h *Handler) handleIsReady() {
 	h.sendResponse("readyok")
 }
 
+// ... (handleUciNewGame and handlePosition are unchanged) ...
 func (h *Handler) handleUciNewGame() {
 	h.state = chess.New()
 }
 
 func (h *Handler) handlePosition(fields []string) {
-	// ... (this function's code does not need to change)
 	var movesIndex = -1
 	if len(fields) > 1 && fields[1] == "startpos" {
 		h.state = chess.New()
@@ -101,8 +98,8 @@ func (h *Handler) handleGo() {
 	h.sendResponse(fmt.Sprintf("bestmove %s", chess.FormatMove(bestMove)))
 }
 
-// sendResponse now belongs to the handler so it can access the logger.
+// sendResponse now uses the global logger.
 func (h *Handler) sendResponse(msg string) {
-	h.logger.Printf("Sending: %s", msg)
+	logging.Log.Printf("Sending: %s", msg) // Use global logger
 	fmt.Println(msg)
 }
