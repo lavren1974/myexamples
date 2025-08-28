@@ -1,14 +1,31 @@
-13:21:22 --- Engine Started ---
-13:21:22 Received: xboard
-13:21:22 Received: uci
-13:21:22 Sending: id name GoNativeRefactored
-13:21:22 Sending: id author Go Developer
-13:21:22 Sending: uciok
-13:21:22 Received: isready
-13:21:22 Sending: readyok
-13:21:22 Received: ucinewgame
-13:21:22 Received: isready
-13:21:22 Sending: readyok
-13:21:22 Received: position startpos moves e2e4
-13:21:22 Received: go wtime 300000 btime 300000 winc 0 binc 0
-13:21:22 Sending: bestmove a1a1
+14:00:40 --- Engine Started ---
+14:00:40 Received: xboard
+14:00:40 Received: uci
+14:00:40 Sending: id name GoNativeRefactored
+14:00:40 Sending: id author Go Developer
+14:00:40 Sending: uciok
+14:00:40 Received: isready
+14:00:40 Sending: readyok
+14:00:40 Received: ucinewgame
+14:00:40 Received: isready
+14:00:40 Sending: readyok
+14:00:40 Received: position startpos moves d2d4
+14:00:40 Received: go wtime 300000 btime 300000 winc 0 binc 0
+14:00:40 Sending: bestmove d7d6
+14:00:42 Received: position startpos moves d2d4 d7d6 e2e4
+14:00:42 Received: go wtime 298938 btime 300000 winc 0 binc 0
+14:00:42 Sending: bestmove d6d5
+14:00:43 Received: position startpos moves d2d4 d7d6 e2e4 d6d5 e4e5
+14:00:43 Received: go wtime 298219 btime 300000 winc 0 binc 0
+14:00:43 Sending: bestmove b7b6
+14:00:44 Received: position startpos moves d2d4 d7d6 e2e4 d6d5 e4e5 b7b6 e5e6
+14:00:44 Received: go wtime 297953 btime 300000 winc 0 binc 0
+14:00:44 Sending: bestmove d8d7
+14:00:45 Received: position startpos moves d2d4 d7d6 e2e4 d6d5 e4e5 b7b6 e5e6 d8d7 e6f7
+14:00:45 Received: go wtime 297125 btime 299989 winc 0 binc 0
+14:00:45 Sending: bestmove e8d8
+14:00:48 Received: position startpos moves d2d4 d7d6 e2e4 d6d5 e4e5 b7b6 e5e6 d8d7 e6f7 e8d8 f7g8q
+14:00:48 Received: go wtime 294734 btime 299989 winc 0 binc 0
+14:00:48 Sending: bestmove e7e5
+14:13:29 Received: quit
+14:13:29 --- Engine Quit ---
