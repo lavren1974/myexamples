@@ -5,31 +5,29 @@ import (
 	"fmt"
 	"go-chess-engine/chess"
 	"go-chess-engine/engine"
-	"go-chess-engine/logging" // Import the logging package
+	"go-chess-engine/logging"
 	"os"
 	"strings"
 )
 
-// Handler no longer needs a logger field.
 type Handler struct {
-	state  *chess.State
+	board  chess.Board // This is now the INTERFACE, not a concrete type
 	engine *engine.Engine
 }
 
-// NewHandler is now simpler.
 func NewHandler() *Handler {
 	return &Handler{
-		state:  chess.New(),
+		// Use the factory to create the board from the starting position
+		board:  chess.NewBoardFromConfig(chess.StartFEN),
 		engine: engine.New(),
 	}
 }
 
-// Loop now uses the global logger.
 func (h *Handler) Loop() {
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		command := scanner.Text()
-		logging.Log.Printf("Received: %s", command) // Use global logger
+		logging.Log.Printf("Received: %s", command)
 
 		fields := strings.Fields(command)
 		if len(fields) == 0 {
@@ -63,15 +61,16 @@ func (h *Handler) handleIsReady() {
 	h.sendResponse("readyok")
 }
 
-// ... (handleUciNewGame and handlePosition are unchanged) ...
 func (h *Handler) handleUciNewGame() {
-	h.state = chess.New()
+	// Re-create the board from the starting position
+	h.board = chess.NewBoardFromConfig(chess.StartFEN)
 }
 
 func (h *Handler) handlePosition(fields []string) {
 	var movesIndex = -1
+	var fen = chess.StartFEN
+
 	if len(fields) > 1 && fields[1] == "startpos" {
-		h.state = chess.New()
 		movesIndex = 2
 	} else if len(fields) > 2 && fields[1] == "fen" {
 		fenStr := ""
@@ -82,24 +81,30 @@ func (h *Handler) handlePosition(fields []string) {
 			}
 			fenStr += fields[i] + " "
 		}
-		h.state = chess.MustParseFEN(strings.TrimSpace(fenStr))
+		fen = strings.TrimSpace(fenStr)
 	}
 
+	// Create the new board from the specified FEN
+	h.board = chess.NewBoardFromConfig(fen)
+
+	// Apply moves if they are provided
 	if movesIndex != -1 && movesIndex+1 < len(fields) {
 		for i := movesIndex + 1; i < len(fields); i++ {
 			move := chess.ParseMove(fields[i])
-			h.state.ApplyMove(move)
+			h.board.ApplyMove(move)
 		}
 	}
 }
 
 func (h *Handler) handleGo() {
-	bestMove := h.engine.FindBestMove(h.state)
+	// The engine needs to receive the board interface
+	bestMove := h.engine.FindBestMove(h.board)
 	h.sendResponse(fmt.Sprintf("bestmove %s", chess.FormatMove(bestMove)))
 }
 
-// sendResponse now uses the global logger.
+// This is the corrected function signature.
+// It now correctly has the (h *Handler) receiver.
 func (h *Handler) sendResponse(msg string) {
-	logging.Log.Printf("Sending: %s", msg) // Use global logger
+	logging.Log.Printf("Sending: %s", msg)
 	fmt.Println(msg)
 }

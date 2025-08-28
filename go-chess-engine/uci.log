@@ -1,16 +1,14 @@
-12:24:20 --- Engine Started ---
-12:24:20 Received: xboard
-12:24:20 Received: uci
-12:24:20 Sending: id name GoNativeRefactored
-12:24:20 Sending: id author Go Developer
-12:24:20 Sending: uciok
-12:24:20 Received: isready
-12:24:20 Sending: readyok
-12:24:21 Received: ucinewgame
-12:24:21 Received: isready
-12:24:21 Sending: readyok
-12:24:21 Received: position startpos moves e2e4
-12:24:21 Received: go wtime 300000 btime 300000 winc 0 binc 0
-12:24:21 Sending: bestmove g7g5
-12:24:24 Received: quit
-12:24:24 --- Engine Quit ---
+13:21:22 --- Engine Started ---
+13:21:22 Received: xboard
+13:21:22 Received: uci
+13:21:22 Sending: id name GoNativeRefactored
+13:21:22 Sending: id author Go Developer
+13:21:22 Sending: uciok
+13:21:22 Received: isready
+13:21:22 Sending: readyok
+13:21:22 Received: ucinewgame
+13:21:22 Received: isready
+13:21:22 Sending: readyok
+13:21:22 Received: position startpos moves e2e4
+13:21:22 Received: go wtime 300000 btime 300000 winc 0 binc 0
+13:21:22 Sending: bestmove a1a1

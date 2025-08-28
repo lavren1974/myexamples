@@ -15,16 +15,12 @@ func New() *Engine {
 }
 
 // FindBestMove now uses the legal move generator.
-func (e *Engine) FindBestMove(s *chess.State) chess.Move {
-	// Call the new legal move generator
-	moves := s.GenerateLegalMoves()
-
+// FindBestMove now accepts the Board INTERFACE
+func (e *Engine) FindBestMove(b chess.Board) chess.Move {
+	moves := b.GenerateLegalMoves() // This call works on both ArrayBoard and Bitboard!
 	if len(moves) == 0 {
-		// If there are no legal moves, the game is over (checkmate or stalemate).
-		// Return a null move.
 		return chess.Move{}
 	}
-
 	rand.Seed(time.Now().UnixNano())
 	return moves[rand.Intn(len(moves))]
 }

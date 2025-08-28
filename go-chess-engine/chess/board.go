@@ -2,6 +2,19 @@ package chess
 
 import "strings"
 
+// Board is an interface that defines the behavior of a chess board representation.
+type Board interface {
+	ApplyMove(m Move)
+	GenerateLegalMoves() []Move
+	SideToMove() Color
+	IsCheckmate() bool
+	IsStalemate() bool
+	// We will add more methods here as needed, e.g., ToFEN()
+}
+
+// These are constants for FEN parsing
+const StartFEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+
 // State holds all information about the current state of the game.
 type State struct {
 	Board           [64]Piece
@@ -79,7 +92,7 @@ func MustParseFEN(fen string) *State {
 }
 
 // ... (pieceFromChar function remains the same)
-func pieceFromChar(c rune) Piece {
+func pieceFromChar2(c rune) Piece {
 	switch c {
 	case 'p':
 		return BlackPawn
